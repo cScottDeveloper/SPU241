@@ -1,0 +1,13 @@
+
+while read line1 line2 
+do 
+echo $line1
+if test !  -d $line1
+then
+mkdir $line1
+fi
+touch $line1/$line2 
+done < lab8.dat
+
+
+
