@@ -1,0 +1,55 @@
+if [[ ! $# -eq 1 ]]; 
+then
+echo "needs list of book information"
+fi
+
+if [ ! -r $1 ]
+then
+echo "the file $1 is not readable"
+fi
+
+while true
+do
+echo "Choose an option: "
+echo ================================================
+
+echo "1. Search for books by author"
+echo "2. Add a new entry to the booklist"
+echo "3. Delete entry using the title from booklist"
+echo "4. Display all in booklist (with count)"
+echo "5. Exit"
+
+echo ================================================
+
+read option
+case $option in
+1) echo Enter your search by author:
+read search
+search=$(echo $search)
+OIFS=$IFS
+IFS=':'
+
+while read line1 line2 line3 || [-n "$line1" ];
+do
+result=$(echo $line1)
+if [[ "$result == *"$search"* ]]
+then 
+echo -e $line1 '\t\t' $line2 '\t\t' $line3
+fi
+done < $1
+OIFS=IFS
+;;
+
+#Adds new entry to the booklist 
+#works, but does not recognize if the line being added is already there
+2) echo What is the name of author?
+read author
+echo What is the title of the book?
+read title
+echo What is the year of the book?
+read year
+entry=$author:$title:$year
+echo $entry >> $1
+;;
+
+#Delete an entry in booklist

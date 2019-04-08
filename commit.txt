@@ -1,0 +1,113 @@
+[scottcha@eos27 SPU241]$ ls
+ Lab5   Lab6   Lab7   Lab8  'Lecture Notes 6 - Separate Compilation.pdf'   Project1E
+[scottcha@eos27 SPU241]$ git init 
+Initialized empty Git repository in /home/scottcha/SPU241/.git/
+[scottcha@eos27 SPU241]$ git add .
+[scottcha@eos27 SPU241]$ git commit
+Aborting commit due to empty commit message.
+[scottcha@eos27 SPU241]$ git commit -m "Committing all classwork"
+[master (root-commit) b04c8e3] Committing all classwork
+ Committer: Chandler Scott <scottcha@eos27.cis.gvsu.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 75 files changed, 3221 insertions(+)
+ create mode 100644 Lab5/lab5.c
+ create mode 100644 Lab5/lab5.dat
+ create mode 100755 Lab6/lab6
+ create mode 100644 Lab6/lab6.c
+ create mode 100644 Lab6/output.txt
+ create mode 100644 Lab7/code/firstC.c
+ create mode 100644 Lab7/code/firstC.out
+ create mode 100644 Lab7/code/hello.c
+ create mode 100644 Lab7/code/inboth1.sh
+ create mode 100644 Lab7/code/inboth2.sh
+ create mode 100644 Lab7/code/test.c
+ create mode 100644 Lab7/findfiles1.sh
+ create mode 100644 Lab7/findfiles2.sh
+ create mode 100644 Lab7/headers
+ create mode 100644 Lab7/lab7.txt
+ create mode 100644 Lab7/lab7a
+ create mode 100644 Lab7/lab7b
+ create mode 100755 Lab7/loop1
+ create mode 100644 Lab7/loop2
+ create mode 100755 Lab7/loop3
+ create mode 100644 Lab7/loop4
+ create mode 100755 Lab7/loop5
+ create mode 100755 Lab7/menu
+ create mode 100644 Lab8/lab8.dat
+ create mode 100644 Lab8/lab8.txt
+ create mode 100644 Lecture Notes 6 - Separate Compilation.pdf
+ create mode 100644 Project1E/.idea/Project1E.iml
+ create mode 100644 Project1E/.idea/codeStyles/Project.xml
+ create mode 100644 Project1E/.idea/misc.xml
+ create mode 100644 Project1E/.idea/modules.xml
+ create mode 100644 Project1E/.idea/workspace.xml
+ create mode 100644 Project1E/CMakeLists.txt
+ create mode 100644 Project1E/cmake-build-debug/CMakeCache.txt
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/3.12.3/CMakeRCCompiler.cmake
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.exe
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/CMakeOutput.log
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Makefile.cmake
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Makefile2
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/C.includecache
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/DependInfo.cmake
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/build.make
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/cmake_clean.cmake
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/depend.internal
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/depend.make
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/flags.make
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/link.txt
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/linklibs.rsp
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/main.c.obj
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/objects.a
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/objects1.rsp
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/Project1E.dir/progress.make
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/TargetDirectories.txt
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/clion-environment.txt
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/clion-log.txt
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/cmake.check_cache
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/feature_tests.bin
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/feature_tests.c
+ create mode 100644 Project1E/cmake-build-debug/CMakeFiles/progress.marks
+ create mode 100644 Project1E/cmake-build-debug/Makefile
+ create mode 100644 Project1E/cmake-build-debug/Project1E.cbp
+ create mode 100644 Project1E/cmake-build-debug/Project1E.exe
+ create mode 100644 Project1E/cmake-build-debug/cmake_install.cmake
+ create mode 100644 Project1E/cmake-build-debug/out.txt
+ create mode 100644 Project1E/cmake-build-debug/pFile.txt
+ create mode 100755 Project1E/main
+ create mode 100644 Project1E/main.c
+ create mode 100644 Project1E/main.o
+ create mode 100644 Project1E/makefile
+ create mode 100644 Project1E/out.txt
+ create mode 100644 Project1E/test.txt
+[scottcha@eos27 SPU241]$ git remote add origin https://github.com/cScottDeveloper/SPU241.git
+[scottcha@eos27 SPU241]$ git push -u origin master
+Username for 'https://github.com': cScottDeveloper
+Password for 'https://cScottDeveloper@github.com': 
+Enumerating objects: 89, done.
+Counting objects: 100% (89/89), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (81/81), done.
+Writing objects: 100% (89/89), 176.32 KiB | 3.92 MiB/s, done.
+Total 89 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/cScottDeveloper/SPU241.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+

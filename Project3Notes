@@ -1,0 +1,104 @@
+This is a menu driven program. Should show menu options available. 
+
+Organization:
+check command line arguments to handle exceptions
+display the options available
+
+--these two parts should be repeatable--
+find out what user wants
+perform corresponding task
+----------------------------------------
+
+use case statement to display a menu:
+echo "1: show calendar"
+echo "2: spell checking"
+echo "3: say hello"
+echo "4: enter your choice"
+read choice in
+----------------------This part needs to be in a loop---------------------
+case $choice
+1) cal;; #is a command to display calendar and you need the double semi colon
+2) ./spellcheck dict prog.c
+3) ./hello
+*) ...
+esac #ends the case block
+--------------------------------------------------------------------------
+Could have everything this project requires in one program. Like the way shown above.
+You could also do this with two separate scripts for the program. 
+
+Loops:
+Still can use continue and break for your loops. continue skips the rest of the code under it and just continues to the next if.
+Break breaks you out of the loop. 
+
+Commands in linux:
+several operations can be done with "grep"
+grep is used for search purposes
+
+example1: grep "162" filename.txt #looks through the file for 162
+example2: grep "162" *.dat #searches all the .dat files for 162 in the file 
+example3: grep -h "162" *.dat #doesnt care about file name
+example4: grep -w "162" *.dat #cares about 162 being the whole word not just a partial
+example5: grep -l "cis162" *.dat #only returns that file that contains the word
+example6: grep -l "data" list[12] #returns the file that contains the word
+
+----this -v can be used for the delete operation----
+example7: grep -v "162" lab8.dat #-v means "all but" only returns lines that do not contain the key
+example8: grep -v "162" lab8.dat > tempfile #-v means "all but" only returns lines that do not contain the key, 
+and pushes that to another file called "tempfile" acts as delete function
+
+Commands needed for project purpose: 
+should be able to do search (grep)
+should be able to append one line to existing file using the >>
+
+You may want to:
+mkdir project3
+touch b.txt
+touch b.txt.1
+touch b.txt.2
+touch a.txt
+touch proj1.java
+touch proj1.c
+touch report.txt
+
+Would want to test program in an environment like this(a folder with multiple filenames)
+
+Steps: 
+check command line arguments
+find a unique name( a name which has never been used)
+and then need to change filename from a.txt to a unique name found
+if you know what name to change to you can use mv 
+the key here is to find the unique name
+
+Creating a name:
+prefix="proj"
+num=1
+basically prefix and number together make a file name
+
+fname=$prefix.$num
+
+echo $fname #will show you the name of the file
+
+let num=num+1
+echo $num
+
+fname=$prefix.$num
+But how do you find a unique name???
+
+if a.txt exists try a.txt.1 and if that exists try a.txt.2 and so forth
+now how can we do this??
+
+Solution: a way to check to see if a name has been used, if so generate next name
+if test -f $fname
+> then
+> echo found
+>else
+> echo not found
+>fi
+
+while test ! -f $fname #to check if the name exists :)
+
+Requirement for second part: 
+Display how many books in file
+So you must count how many lines in file. How do you count how many lines in the file?
+wc -l #counts the number of lines
+

@@ -1,0 +1,77 @@
+Data Organization:
+In a file each line is considered to be a record.
+On each line there are a number of fields.
+
+Two different ways to separate fields:
+1. white space as delimeter (or whitespace characters)
+2. special character
+
+Commands to process data properly:
+awk, gawk, sed
+
+awk is a linux version
+gawk is GNU version on linux
+
+Apparently both of these are very powerful.
+
+both are programmable and allow you to search lines based on criteria
+typically used for report generation
+gawk example: gawk [-F separation] pattern '{action}' file(s)
+
+sed example: sed [-option] command files
+
+Part2:
+How to use gawk to accomplish certain things. gawk is used for report generation.
+cut -d: -f4 project | sort | uniq -c |
+gawk '{printf "%s:%s\n", $2, $1 > pnum
+cut -d: -fl-4 programmer | sort | -t: | uniq > pnn
+join -t: -1l -2l pnn pnum > report
+
+gawk ' 
+BEGIN {
+{ FS = ":" }
+{ printf " Programmer Activity Status Reprot\n" }
+{ "date" | getline d }
+{ printf "  %s\n", d}
+{ print " ================================ " }
+{ printf "%s", $1, $2, $3, $4, $5} report #this print line needs to be finished
+rm pnum pnn report
+
+Further command notes:
+cat concatinates two files
+
+paste is used to 
+
+comm file file2 #is used to show common things between two files
+comm -12 ignores column 1 and 2 to focus on what is in common between both files
+
+diff file1 file2 #finds the differences between the two files
+
+sdiff file1 file2 #can produce a more readable format by using colums
+
+
+
+Variable notes:
+environment variables
+inherited by child processor
+local variables
+not available in a child process
+
+Examples:
+//script test
+export class
+class=162
+echo $class #value of class is 162 and local
+base subTest
+echo $class
+
+//script subTest
+echo $class #prints nothing this is not same class as previous script
+class=163
+echo $class #value is 163
+
+Review of lab exercise:
+path=courses/es241/examples/demo.c
+echo $path | gawk -F/ '{ print $NF }'
+or could have done 
+grep '[^/]*$'

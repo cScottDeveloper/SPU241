@@ -1,0 +1,86 @@
+step 1: mycheck dict prog.c 
+step 2: Using the standard spell checker to check the document prog.c
+step 3: vim mycheck
+# spell checking
+if [ $# -ne 2 ] 
+then
+echo "usage ..."
+exit 1
+fi
+
+#if statement to make sure each file is readable
+if [ ! -r $1 -o ! -r $2 ] #if either file is not readable
+then
+echo "$1 or $2 is not readable"
+exit 1
+fi
+:x #to save in vim
+
+bash mycheck dict prog.c #to run mycheck
+
+part two of program:
+
+# spell checking
+if [ $# -ne 2 ] 
+then
+echo "usage ..."
+exit 1
+fi
+
+#if statement to make sure each file is readable
+if [ ! -r $1 -o ! -r $2 ] #if either file is not readable
+then
+echo "$1 or $2 is not readable"
+exit 1
+fi
+hunspell -l $2 > zz #redirects to a temporary file
+#now exit vim and run and open zz temp file it will contain your dict words
+#now re-enter vim
+hunspell -l $2 | sort | uniq > zz #gets rid of dupicate words
+while read word
+do
+echo $word
+done < zz
+# exit vim
+# outside of vim:
+grep printf dict # searches through any number of documents for the "printf" word
+grep -w printf dict # if there is no match to the word in the file there is not output
+if grep -w printf dict #makes the grep a condition
+>then
+>	echo found
+>fi
+grep -wq printf dict #quiets the output so no output.
+
+
+while read word
+do 
+if ! grep -wq "word" $1 
+then
+echo $word
+fi
+
+done < zz
+
+set $[date]
+case $1 in
+ Fri) echo "It is Friday"
+Sat)Sun) echo "Its the weekend";;
+*) echo "Its a weekday";;
+esac
+#output: it is a weekday
+
+shell function:
+-reside in memory
+-run in the calling process
+
+fg ()
+>{
+> history | grep -i $1
+>}
+#now this function is created an saved in memory
+#you can just type fg sort to use the function
+fg sort
+#output: shows all command lines sortable to use
+
+#if you create a function and you want to load the function then you need to include the 
+#function in the start up file used for small tasks but used frequently.

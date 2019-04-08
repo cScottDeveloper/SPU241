@@ -1,0 +1,18 @@
+Script started on 2019-04-05 13:38:23-04:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="96" LINES="52"]
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ clisp[3Plsclispd Lispls[Kcd SPL3433bash newname a.txt b.txt[Kls[Kcd Project3ls[Kcd SPU241[4Plisptouch lispPractice.txtls[Kmkdir Lispls[Kcd SPL343ls[Ktouch ScriptNotes.txtls[Kcd SPU241[3PSPU241[4Plsruby GameOfLifeTest.rbls[KSPU241cd SPU241ls[Ktouch ScriptNotes.txtls[Kcd SPL343ls[Kmkdir Lispls[Ktouch lispPractice.txtclisp[Kd SPU241ls[Kcd Project3ls[Kbash newname a.txt b.txt[14Pcd SPL3433[Kls[Kcd Lisp[2Plisp[3Plsclisp[Kclisp[3Plsclispd Lispls[Kcd SPL3433bash newname a.txt b.txt[Kls[Kcd Project3ls[Kcd SPU241[4Plisptouch lispPractice.txtls[Kmkdir Lispls[Kcd SPL343ls[Ktouch ScriptNotes.txtls[Kcd SPU241[3PSPU241cd SPU241ls[Ktouch ScriptNotes.txtls[Kcd SPL343ls[Kmkdir Lispls[Kmkdir Lispls[Kcd SPL343ls[Ktouch ScriptNotes.txtls[Kcd SPU241[3PSPU241[4Plsruby GameOfLifeTest.rbls[Kcd Project6..[K[1Pwootruby OthelloTest.rbls[Kcd SPL343/Project5gem install minitestls[Kcd ..gem install miniatestcd ..[K[3Plsgem install minitest[2Pcd SPL343/Project5ls[Kruby OthelloTest.rbwoot[Kcd ..Project6ls[Kruby GameOfLifeTest.rbls[KSPU241cd SPU241ls[Ktouch ScriptNotes.txtls[Kcd SPL343ls[Kmkdir Lispls[Ktouch lispPractice.txtclisp[Kd SPU241ls[Kcd Project3ls[Kbash newname a.txt b.txt[14Pcd SPL3433[Kls[Kcd Lisp[2Plisp[3Plsclisp[Kclisp[Ksort -t, -k2 lab9.dat > lab9a
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ gawk -F, '{prinf[Ktf"%s\t%s\t%s\t[K[K\n", $3, $2, $1}'lab9.dat > lab9b
+gawk: cmd. line:1: {printf"%s\t%s\t%s\n", $3, $2, $1}lab9.dat
+gawk: cmd. line:1:                                       ^ syntax error
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ gawk -F, '{printf"%s\t%s\t%s\n", $3, $2, $1}'lab9.dat > lab9b[1@ [1P[C[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ gawk -F, '{printf"%s\t%s\t%s\n", $3, $2, $1}' lab9.dat > lab9b[1P[C[1P[1P[1P[1@a[C[C[C[C[C[C[C[C
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ sed -n 's/Fall /F/p; s/Winter/[C /[CW/p' lab9b
+F2015	CIS162	Introduction to Java
+W2017	CIS163	Data Structures
+F2016	CIS241	System Programming
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ path=courses/cd[Ks241/examples/demo.c
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ echo $path | gawk -F\[K/ '{prit[Knt $NF}'
+demo.c
+]0;scottcha@eos27:~/SPU241/Lab9[scottcha@eos27 Lab9]$ exit
+exit
+
+Script done on 2019-04-05 13:44:31-04:00 [COMMAND_EXIT_CODE="0"]

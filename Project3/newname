@@ -1,0 +1,27 @@
+#makes sure the number of args == 2
+if [[ ! $# -eq 2 ]]; 
+then
+echo "number of arguments error"
+fi
+#makes sure the file name does not already exist
+if [ ! -e $1 ]
+then 
+echo $1 file does not exist
+exit 1
+fi 
+#set the name of the new file
+name=$2
+if [[ -e $name ]] ; 
+then
+i=1
+#while the name exists iterate through the number
+while [[ -e $name.$i ]] ; 
+do
+let i++
+done
+name=$name.$i
+#change the file name
+mv $1 $name
+else 
+mv $1 $2
+fi

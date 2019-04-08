@@ -1,0 +1,68 @@
+Regular Expression Notes:
+
+What is it? A string with special symbols. You can use one regular expression to describe multiple strings with similar features.
+Once these strings are identified you can remove, replace, extract(if meet criteria), and basically makes commands more powerful in linux.
+
+Vim, grep, egrep, awk, gawk, sed. The onces with the e before them alow you to use extended regular expressions.
+
+basic elements:
+1. delimeter /expr/ or 'expr' some allows you to use either and some commands only one of these.
+2. literal 'ind' match any string that contains these three letters such as "windows"
+3. special characters ^ . * all have special meaning in regular expressions
+. matches any single character
+example: .ing matches any character followed by ing
+
+[] any single char enclosed in brackets
+example: [a-z] represents any single lowercase letter
+example2:proj[1-3] matches any project that contains 1,2, or 3 after proj
+example3: proj[1-3]\.c matches all proj files that are .c
+
+[^a-z] the carrot means "anything but" so can be anything but lower case letters
+
+* zero or more occurances of the proceding character
+
+example: ab*c in this case the star describes how many times be appears in the string
+so you could have ac, abc, and even abbbbbbbbbc you can have any number of b's
+example2: a.*c to have any character between a and c
+
+example3:[^a-z]* any number of anything thats not a lowercase letter
+
+^bash what appears at the beginning of a string
+so this will match any string that begins with bash
+
+book$ what appears at the end of a string
+so will match anything that ends with this string, so will match anything that ends with "book"
+
+^bash$ match any line that begins and ends with bash
+
+example: this is what it was, is it?
+/this.*is/ rule: returns the longest match possible.
+will return: "this is what it was is"
+
+
+4. escape sequences \. in this case \* period and star do not have special meanings they are just period and star
+
+Extended Regular Expressions:
+egrep, grep-E, gawk
+
+Specify how long the procceding character occurs:
+1. + one or more occurances of the preceding character
+2. ? zero or one
+3. | either or 
+example: 'ab|cd' anyline that has ab or cd and 
+'^Exit|^Quit' any line that begins with exit or quit remeber ^ means at the beginning 
+
+4.() mean grouping, treat anything in () as one item
+(ab)?c
+[ab(cd)] either a or be or cd as one unit
+5. (ab){3} repeat, the brackets mean how many times to repeat so if ab together repreats 3 times
+
+How to apply these special symbols:
+Exercises: search any line that contains headerfile name(include), for search you can use grep to search for any line that contains include.
+Search all c files in your curr directory. 
+solution: grep 'include' *.c
+solution to include header files as well(.h) files: grep 'incldue' *.[hc]
+use -h to get rid of filename: grep -h 'include' *.c
+o means extract
+example: grep -ho '<.*\.h>' *.c returns with <> around filenames
+example2: grep -ho '<.*\.h>' *.c | grep -o '[^<>]*' returns without <> around filenames 
